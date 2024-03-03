@@ -1,0 +1,54 @@
+version: '3.8'
+
+services:
+  pserver:
+    build:
+      context: .
+      dockerfile: ./PServer/Dockerfile
+    ports:
+      - "9000:80"
+      - "50051:50051"
+    restart: always
+    networks:
+      - my_network
+    volumes:
+      - ./files:/files
+    environment:
+      - CENTRAL_HOST=http://centralserver
+
+  pclient:
+    build:
+      context: .
+      dockerfile: ./PClient/Dockerfile
+    ports:
+      - "9001:80"
+    restart: always
+    networks:
+      - my_network
+
+  centralserver:
+    build:
+      context: .
+      dockerfile: ./serverCentral/Dockerfile
+    ports:
+      - "8000:80"
+    restart: always
+    networks:
+      - my_network      
+    volumes:
+      - ./central:/central
+  
+  ergoproxy:
+    build:
+      context: .
+      dockerfile: ./ErgoProxy/Dockerfile
+    ports:
+      - "8080:8080"
+      - "8081:8081"
+    restart: always
+    networks:
+      - my_network
+
+networks:
+  my_network:
+    driver: bridge

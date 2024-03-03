@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>List Files</title>
+</head>
+
+<body>
+    <h1>Subir Archivo</h1>
+    <form action="/upload_file/" method="post" enctype="multipart/form-data">
+        <label for="file">Seleccionar Archivo:</label>
+        <input type="file" name="file" id="file" required>
+        <br>
+        <button type="submit">Subir Archivo</button>
+    </form>
+    <h1>FILES:</h1>
+    {% for node, files in files_data['files'].items() %}
+    <h2>{{ node }}</h2>
+    <ul>
+        {% for file in files %}
+        <li><a href="/download/{{file}}?ip={{node}}" download>{{ file }}</a></li>
+        {% endfor %}
+    </ul>
+    {% endfor %}
+</body>
+
+</html>

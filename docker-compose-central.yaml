@@ -1,0 +1,10 @@
+version: '3.8'
+
+services:
+  centralserver:
+    build:
+      context: .
+      dockerfile: ./serverCentral/Dockerfile
+    ports:
+      - "8000:80"
+    restart: always
