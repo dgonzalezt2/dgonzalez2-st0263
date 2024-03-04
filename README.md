@@ -34,5 +34,6 @@
 ### 5. Otra información que considere relevante para esta actividad.
 
 ## Referencias:
-[Docker install](https://docs.docker.com/engine/install/ubuntu/)
-[Docker Swarm](https://docs.docker.com/engine/swarm/)
+
+* [Docker install](https://docs.docker.com/engine/install/ubuntu/)
+* [Docker Swarm](https://docs.docker.com/engine/swarm/)
