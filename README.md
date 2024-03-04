@@ -251,6 +251,7 @@ Ejecutamos el docker
 ```bash
 sudo docker compose up -d
 ```
+![image](https://github.com/dgonzalezt2/dgonzalez2-st0263/assets/81880494/791fa4d5-9f47-47d0-8071-3980d79f04c2)
 
 ## Para ver las paginas web desplegada en AWS las puedes encontrar en los siguientes links.
 
@@ -259,13 +260,17 @@ sudo docker compose up -d
 
 ![image](https://github.com/dgonzalezt2/dgonzalez2-st0263/assets/81880494/8d11a939-5a37-4a69-9a7f-725b69401651)
 
+## Mini Guía de Uso para el Usuario
+Seleccionar alguno de los 2 IP:
+[IP_1](http://54.226.116.91/)
+[IP_2](http://44.220.139.100/)
+* Le das en Seleccionar Archivo en la parte posterior izquierda, una vez cargado el programa le das en subir esperas unos segundos y te notifica que ya subio el archivo, te regresas a la pagina principal y ya puedes apreciar el archivo subido en la IP seleccionada.
+* Al darle click en cualquier archivo se descarga.
 ![image](https://github.com/dgonzalezt2/dgonzalez2-st0263/assets/81880494/0d832e3e-da2d-4ab7-b9b9-cc16d90bbfb3)
 
 ## Video explicativo del proceso de diseño, desarrollo y ejecución del programa.
 
 [Video](https://youtu.be/40CItPiv-5k)
-
-## Otra información que considere relevante para esta actividad.
 
 ### Referencias:
 
