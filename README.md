@@ -35,5 +35,6 @@
 
 ## Referencias:
 
+* [Proxy](https://www.tokioschool.com/noticias/que-es-proxy/)
 * [Docker install](https://docs.docker.com/engine/install/ubuntu/)
 * [Docker Swarm](https://docs.docker.com/engine/swarm/)
