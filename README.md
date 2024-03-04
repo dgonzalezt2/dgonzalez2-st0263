@@ -84,6 +84,9 @@ Project_Root/
 * files: Directorio para almacenar archivos compartidos.
 * docker-compose.yml: Archivo de configuración de Docker Compose para orquestar los servicios.
 
+## Video explicativo del proceso de diseño, desarrollo y ejecución del programa.
+
+[Video](https://youtu.be/40CItPiv-5k)
 
 ## Otra información que considere relevante para esta actividad.
 
