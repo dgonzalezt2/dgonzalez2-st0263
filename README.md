@@ -127,13 +127,130 @@ Las máquinas virtuales de Ubuntu en AWS se utilizan para desplegar los servicio
 ![image](https://github.com/dgonzalezt2/dgonzalez2-st0263/assets/81880494/b5300291-8d8c-4688-ab79-a54fcef3426e)
 ![image](https://github.com/dgonzalezt2/dgonzalez2-st0263/assets/81880494/dd5a6afe-d038-42b6-975f-fef7b622d984)
 ![image](https://github.com/dgonzalezt2/dgonzalez2-st0263/assets/81880494/cbc8ddb6-29a8-4a7c-a25c-9efc13213a55)
+# Creamos nuestro EC2 con 3 instancias en total un central, peer1 y peer2
 ![image](https://github.com/dgonzalezt2/dgonzalez2-st0263/assets/81880494/6b2425d4-28ac-49a9-a67e-f91f80aa0d19)
+# Le damos arriba en lanzar instancias para crearlas teniendo estas especificaciones para los peers
 ![image](https://github.com/dgonzalezt2/dgonzalez2-st0263/assets/81880494/7aeb2923-3215-4045-930f-2ef0b0031dbd)
-
 ![image](https://github.com/dgonzalezt2/dgonzalez2-st0263/assets/81880494/cccc79d7-8c15-4f17-b098-09625c4d2dfd)
 ![image](https://github.com/dgonzalezt2/dgonzalez2-st0263/assets/81880494/ff6dd8eb-2d28-48a3-8ea1-2c86cf08aa11)
 ![image](https://github.com/dgonzalezt2/dgonzalez2-st0263/assets/81880494/d9377abe-96a2-472e-a04b-b2d3b9f5b8ed)
 
+# Una vez creado las Instancias 
+# Central
+Abrimos una consola para poner comandos en 'Central' con el siguiente comando:
+![image](https://github.com/dgonzalezt2/dgonzalez2-st0263/assets/81880494/c1a8f6a1-91a6-49c3-b746-da9563b7aea7)
+Posteriormente se instala docker una vez instalado el anterior comando
+```bash
+# Add Docker's official GPG key:
+sudo apt-get update
+sudo apt-get install ca-certificates curl
+sudo install -m 0755 -d /etc/apt/keyrings
+sudo curl -fsSL https://download.docker.com/linux/ubuntu/gpg -o /etc/apt/keyrings/docker.asc
+sudo chmod a+r /etc/apt/keyrings/docker.asc
+
+# Add the repository to Apt sources:
+echo \
+  "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.asc] https://download.docker.com/linux/ubuntu \
+  $(. /etc/os-release && echo "$VERSION_CODENAME") stable" | \
+  sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
+sudo apt-get update
+```
+```bash
+sudo apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
+```
+```bash
+sudo docker run hello-world
+```
+Posteriormente se clona el repositorio
+```bash
+git clone https://github.com/dgonzalezt2/dgonzalez2-st0263.git
+```
+Nos ubicamos en nuestro documento clonado
+```bash
+cd dgonzalez2-st0263/
+```
+Y añademos el siguiente comando
+```bash
+sudo docker compose -f docker-compose-central.yaml up -d
+```
+![image](https://github.com/dgonzalezt2/dgonzalez2-st0263/assets/81880494/d319c698-28c8-422a-ba7e-5158e1b7a028)
+![image](https://github.com/dgonzalezt2/dgonzalez2-st0263/assets/81880494/7538a9cc-129f-4465-ae84-a6424160e1ff)
+
+# Peer 1
+Abrimos otra consola para poner los comandos del 'Peer1' con el siguiente comando:
+![image](https://github.com/dgonzalezt2/dgonzalez2-st0263/assets/81880494/56462ce1-74f5-4d9a-bb92-8c374f232be4)
+Posteriormente se instala docker una vez instalado el anterior comando
+```bash
+# Add Docker's official GPG key:
+sudo apt-get update
+sudo apt-get install ca-certificates curl
+sudo install -m 0755 -d /etc/apt/keyrings
+sudo curl -fsSL https://download.docker.com/linux/ubuntu/gpg -o /etc/apt/keyrings/docker.asc
+sudo chmod a+r /etc/apt/keyrings/docker.asc
+
+# Add the repository to Apt sources:
+echo \
+  "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.asc] https://download.docker.com/linux/ubuntu \
+  $(. /etc/os-release && echo "$VERSION_CODENAME") stable" | \
+  sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
+sudo apt-get update
+```
+```bash
+sudo apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
+```
+```bash
+sudo docker run hello-world
+```
+Posteriormente se clona el repositorio
+```bash
+git clone https://github.com/dgonzalezt2/dgonzalez2-st0263.git
+```
+Nos ubicamos en nuestro documento clonado
+```bash
+cd dgonzalez2-st0263/
+```
+Ejecutamos el docker
+```bash
+sudo docker compose up -d
+```
+![image](https://github.com/dgonzalezt2/dgonzalez2-st0263/assets/81880494/46ad430f-3119-4ce4-a657-ed626300889c)
+
+# Peer 2
+Abrimos otra consola para poner los comandos del 'Peer2' con el comando que nos proporciona la instancia:
+Posteriormente se instala docker una vez instalado el anterior comando
+```bash
+# Add Docker's official GPG key:
+sudo apt-get update
+sudo apt-get install ca-certificates curl
+sudo install -m 0755 -d /etc/apt/keyrings
+sudo curl -fsSL https://download.docker.com/linux/ubuntu/gpg -o /etc/apt/keyrings/docker.asc
+sudo chmod a+r /etc/apt/keyrings/docker.asc
+
+# Add the repository to Apt sources:
+echo \
+  "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.asc] https://download.docker.com/linux/ubuntu \
+  $(. /etc/os-release && echo "$VERSION_CODENAME") stable" | \
+  sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
+sudo apt-get update
+```
+```bash
+sudo apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
+```
+```bash
+sudo docker run hello-world
+```
+Posteriormente se clona el repositorio
+```bash
+git clone https://github.com/dgonzalezt2/dgonzalez2-st0263.git
+```
+Nos ubicamos en nuestro documento clonado
+```bash
+cd dgonzalez2-st0263/
+```
+Ejecutamos el docker
+```bash
+sudo docker compose up -d
+```
 
 ## Para ver las paginas web desplegada en AWS las puedes encontrar en los siguientes links.
 
@@ -141,6 +258,7 @@ Las máquinas virtuales de Ubuntu en AWS se utilizan para desplegar los servicio
 * Peer2: http://44.220.139.100/
 
 ![image](https://github.com/dgonzalezt2/dgonzalez2-st0263/assets/81880494/8d11a939-5a37-4a69-9a7f-725b69401651)
+
 ![image](https://github.com/dgonzalezt2/dgonzalez2-st0263/assets/81880494/0d832e3e-da2d-4ab7-b9b9-cc16d90bbfb3)
 
 ## Video explicativo del proceso de diseño, desarrollo y ejecución del programa.
