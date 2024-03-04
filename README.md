@@ -62,15 +62,7 @@ npm start
 ```bash
 docker compose up
 ```
-```bash
-docker compose up --build
-```
-```bash
-docker compose build --no-cache
-```
-```bash
-docker compose up
-```
+
 ## Detalles de desarrollo
 
 ### Configuración de parámetros del proyecto
