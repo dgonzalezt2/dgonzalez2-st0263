@@ -20,8 +20,8 @@ app.add_middleware(
     allow_headers=["*"],
 )
 # Archivos JSON
-peers_file = "/central/peers.json"
-files_file = "/central/files.json"
+peers_file = "peers.json"
+files_file = "files.json"
 
 
 # Función para cargar archivos JSON
@@ -52,10 +52,16 @@ def register_node(node_data: Dict[str, Any], request: Request) -> Dict[str, str]
     save_json_file(peers_file, peers)
 
     files_data = load_json_file(files_file)
-    files_data[ip] = files
+    if ip in files_data:
+        existing_files = set(files_data[ip])
+        new_files = [file for file in files if file not in existing_files]
+        files_data[ip].extend(new_files)
+    else:
+        files_data[ip] = files
     save_json_file(files_file, files_data)
 
     return {"message": "Node registered successfully"}
+
 
 
 # Método GET para listar los archivos disponibles
@@ -68,11 +74,21 @@ def list_files() -> Dict[str, Dict[str, List[str]]]:
 # Método POST para subir un archivo
 @app.post("/upload_file/")
 def upload_file(request: Request, body: UploadFileBody) -> Dict[str, str]:
-    files_data = load_json_file(files_file)
     ip = request.client.host
-    files_data[ip].append(body.file_name)
+    file_name = body.file_name
+
+    files_data = load_json_file(files_file)
+    if ip in files_data and file_name in files_data[ip]:
+        return {"message": "File already exists"}
+
+    if ip not in files_data:
+        files_data[ip] = [file_name]
+    else:
+        files_data[ip].append(file_name)
+
     save_json_file(files_file, files_data)
     return {"message": "File uploaded successfully"}
+
 
 
 # Método GET para obtener un archivo en específico
