@@ -111,9 +111,10 @@ Project_Root/
 * docker-compose.yml: Archivo de configuración de Docker Compose para orquestar los servicios.
 
 ## 4. Descripción del ambiente de EJECUCIÓN (en producción) lenguaje de programación, librerias, paquetes, etc, con sus numeros de versiones.
-## IP o Nombres de Dominio en la Nube o en la Máquina Servidor
 Las máquinas virtuales de Ubuntu en AWS se utilizan para desplegar los servicios. Cada máquina tiene asignada una IP elástica para mantener la consistencia de las direcciones IP entre diferentes sesiones.
-
+## IP o Nombres de Dominio en la Nube o en la Máquina Servidor
+* http://54.226.116.91/
+* http://44.220.139.100/
 ## Como se lanza el servidor.
 ![image](https://github.com/dgonzalezt2/dgonzalez2-st0263/assets/81880494/335cd8d1-c00f-4a4f-a9e6-57f80fd3b890)
 ![image](https://github.com/dgonzalezt2/dgonzalez2-st0263/assets/81880494/b5300291-8d8c-4688-ab79-a54fcef3426e)
