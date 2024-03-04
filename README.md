@@ -57,9 +57,6 @@ py main.py
 ```
 Para ejecutar el docker se realiza lo siguiente
 ```bash
-npm start
-```
-```bash
 docker compose up
 ```
 
