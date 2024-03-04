@@ -1,13 +1,13 @@
 # ST0263 Tópicos Especiales en Telemática
 
-**Estudiante: David Gonzalez, dgonzalez2@eafit.edu.co**
+**Estudiante: David Gonzalez Tamayo, dgonzalez2@eafit.edu.co**
 
-**Profesor: Edwin Montoya, emontoya@eafit.edu.co**
+**Profesor: Edwin Nelson Montoya Munera, emontoya@eafit.edu.co**
 
 ## Nombre de la actividad
 
 ### 1. Breve descripción de la actividad
-
+Desarrollar un sistema P2P distribuido y descentralizado con el objetivo de compartir archivos. Esta implementación se debe basar en un esquema de red no estructurado en el cual un servidor central sirva como directorio y localizador. Un peer está compuesto por un cliente y un servidor. El cliente se debe comunicar con el servidor central para cargar y descargar archivos, este le debe responder con la dirección de un peer que contenga el archivo a descargar o que tenga espacio para cargar un archivo. El servidor del peer debe comunicarse con el servidor central para darle su estado y los archivos que contiene.
 #### 1.1. Que aspectos cumplió o desarrolló de la actividad propuesta por el profesor (requerimientos funcionales y no funcionales)
 
 #### 1.2. Que aspectos NO cumplió o desarrolló de la actividad propuesta por el profesor (requerimientos funcionales y no funcionales)
@@ -38,3 +38,4 @@
 * [Proxy](https://www.tokioschool.com/noticias/que-es-proxy/)
 * [Docker install](https://docs.docker.com/engine/install/ubuntu/)
 * [Docker Swarm](https://docs.docker.com/engine/swarm/)
+* [ChatGPT](https://chat.openai.com/)
